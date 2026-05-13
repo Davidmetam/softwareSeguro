@@ -29,7 +29,7 @@
 
 <div class="card vulnerable">
     <h2>Login Vulnerable</h2>
-    <p><small>Prueba SQL Injection aquí:<br><code>' OR '1'='1</code></small></p>
+    <p><small>Prueba SQL Injection aquí:<br><code>' OR 1=1 -- </code></small></p>
     <div th:if="${errorV}" class="error" th:text="${errorV}"></div>
     <form action="/login-vulnerable" method="POST">
         <input type="text" name="username" placeholder="Usuario" required>
@@ -40,7 +40,6 @@
 
 <div class="card seguro">
     <h2>Login Seguro</h2>
-    <p><small>Usa consultas parametrizadas y verificación de BCrypt.</small></p>
     <div th:if="${errorS}" class="error" th:text="${errorS}"></div>
     <form action="/login-seguro" method="POST">
         <input type="text" name="username" placeholder="Usuario" required>
